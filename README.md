@@ -26,6 +26,7 @@
 - **Domain isolation**：算命、分潤彼此不是上下游；只共用真正 generic 的薄模組。
 - **AI Core hard boundary**：除非能力跨多專案、長期穩定且治理價值極高，否則不放入 AI Core。
 - **Official source first**：台灣 Shopee 資料優先使用官方後台、官方匯出或正式 API；不把未經允許的抓取當核心依賴。
+- **Evidence before assumption**：平台規則、API 能力、分潤條件要能回到官方來源；沒證據的能力標成未驗證，不自行假設。
 - **Publisher is dumb**：Publisher 只驗證並執行已核准任務，不思考、不聊天、不呼叫任意工具。
 
 ## 主流程
@@ -91,10 +92,22 @@ Pantheon 的算命內容規則、SEO 結構、站點 identity、FAQ 與 MysticPa
 ## 文件
 
 - `docs/architecture.md`：架構與責任邊界
+- `docs/research-sources.md`：官方文件、平台規則、內部與開源 Prior Art 的研究來源索引
 - `docs/reuse-map.md`：既有模組重用決策
 - `docs/prior-art.md`：開源 donor 與採用方式
 - `docs/mvp-backlog.md`：MVP 優先級
 - `contracts/README.md`：核心資料契約
+
+## 來源治理
+
+來源優先級固定為：
+
+1. 平台官方條款 / Help Center / Developer Docs
+2. 我們自己的既有 production code
+3. 開源 repo 作 Prior Art
+4. 本專案設計決策
+
+開源實作只能證明「有人這樣做過」，不能用來證明 Shopee TW 或社群平台允許這樣做。詳細來源與未證實事項統一維護在 `docs/research-sources.md`。
 
 ## 非目標
 
